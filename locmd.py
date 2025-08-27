@@ -11,9 +11,9 @@ with open(file_path, 'r') as file:
         # Strip newline and whitespace
         clean_line = line.strip()
         out_path = f'{clean_line}.xml'
+        print(f'Saving {out_path}')
         r = requests.get(f'https://lccn.loc.gov/{clean_line}/marcxml')
         outf = open(out_path, 'w')
         outf.write(r.text)
         outf.close()
-        print(f'Saving {out_path}')
         time.sleep(15)
