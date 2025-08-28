@@ -2,6 +2,8 @@
 import sys
 import time
 import requests
+
+sleeptime = 15
 ## Define the path to your file
 file_path = sys.argv[1]
 
@@ -16,4 +18,5 @@ with open(file_path, 'r') as file:
         outf = open(out_path, 'w')
         outf.write(r.text)
         outf.close()
-        time.sleep(15)
+        print(f'Sleeping for {sleeptime} sec')
+        time.sleep(sleeptime)
